@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:orbit/auth/firebase_auth.dart';
 import 'package:orbit/colors/app_colors.dart';
 
 class LoginPage extends StatefulWidget {
@@ -17,6 +19,8 @@ class _LoginPageState extends State<LoginPage>
   late Animation<double> _signinAnimation;
   late Animation<double> _buttonScaleAnimation;
   late Animation<Offset> _buttonSlideAnimation;
+
+  final FirebaseAuthService _authService = FirebaseAuthService();
 
   @override
   void initState() {
@@ -109,7 +113,21 @@ class _LoginPageState extends State<LoginPage>
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40.0),
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () async {
+                      // Call the sign-in function from the separate service file
+                      UserCredential? userCredential = await _authService
+                          .signInWithGoogle();
+                      if (userCredential != null) {
+                        // User successfully signed in
+                        print(
+                          'Signed in as: ${userCredential.user!.displayName}',
+                        );
+                        // Navigate to the next page
+                      } else {
+                        // Sign-in failed or was cancelled
+                        print('Google Sign-In failed.');
+                      }
+                    },
                     child: Container(
                       height: 70,
                       width: double.infinity,
