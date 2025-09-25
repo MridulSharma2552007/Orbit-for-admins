@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:orbit/login/login_page.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -19,6 +20,14 @@ class _SplashState extends State<Splash> {
         _opacity = 1.0;
         _scale = 1.0;
       });
+    });
+
+    Future.delayed(const Duration(seconds: 3), () {
+      if (!mounted) return;
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const LoginPage()),
+      );
     });
   }
 
