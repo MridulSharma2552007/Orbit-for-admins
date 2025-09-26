@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:orbit/auth/firebase_auth.dart';
 import 'package:orbit/colors/app_colors.dart';
 import 'package:orbit/root/root.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -137,6 +138,9 @@ class _LoginPageState extends State<LoginPage>
                           ),
                         );
                         loginPusher();
+                        SharedPreferences prefs =
+                            await SharedPreferences.getInstance();
+                        await prefs.setBool('isLoggedIn', true);
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(

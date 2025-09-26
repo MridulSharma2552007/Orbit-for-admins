@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:orbit/login/login_page.dart';
+import 'package:orbit/auth/authchecker.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -26,7 +26,7 @@ class _SplashState extends State<Splash> {
       if (!mounted) return;
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const LoginPage()),
+        MaterialPageRoute(builder: (context) => const Authchecker()),
       );
     });
   }
