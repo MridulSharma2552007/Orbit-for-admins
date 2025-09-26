@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:orbit/auth/firebase_auth.dart';
 import 'package:orbit/colors/app_colors.dart';
+import 'package:orbit/root/root.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -69,6 +70,16 @@ class _LoginPageState extends State<LoginPage>
     _controller.forward();
   }
 
+  void loginPusher() {
+    Future.delayed(Duration(seconds: 3), () {
+      if (!mounted) return;
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => Root()),
+      );
+    });
+  }
+
   @override
   void dispose() {
     _controller.dispose();
@@ -114,20 +125,27 @@ class _LoginPageState extends State<LoginPage>
                   padding: const EdgeInsets.symmetric(horizontal: 40.0),
                   child: GestureDetector(
                     onTap: () async {
-                      // Call the sign-in function from the separate service file
                       UserCredential? userCredential = await _authService
                           .signInWithGoogle();
                       if (userCredential != null) {
-                        // User successfully signed in
-                        print(
-                          'Signed in as: ${userCredential.user!.displayName}',
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            backgroundColor: Colors.green,
+                            content: Text(
+                              'Signed in as ${userCredential.user?.displayName}',
+                            ),
+                          ),
                         );
-                        // Navigate to the next page
+                        loginPusher();
                       } else {
-                        // Sign-in failed or was cancelled
-                        print('Google Sign-In failed.');
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Google Sign-In failed.'),
+                          ),
+                        );
                       }
                     },
+
                     child: Container(
                       height: 70,
                       width: double.infinity,
