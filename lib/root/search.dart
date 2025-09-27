@@ -7,6 +7,7 @@ class Search extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 200,
+      height: 100,
     );
   }
 }
