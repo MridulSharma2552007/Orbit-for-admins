@@ -20,7 +20,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     Icon(Icons.book, size: 30, color: Colors.white),
     Icon(Icons.settings, size: 30, color: Colors.white),
   ];
-  final List<Widget> _pages = const [Home(), Search(), Bookspage(), Settings()];
+  final List<Widget> _pages = [const Home(), Search(), const Bookspage(), const Settings()];
 
   @override
   Widget build(BuildContext context) {
