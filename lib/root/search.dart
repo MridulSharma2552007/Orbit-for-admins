@@ -6,7 +6,7 @@ class Search extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200,
+      width: 20,
       height: 10,
     );
   }
