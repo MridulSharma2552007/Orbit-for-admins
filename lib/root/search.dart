@@ -8,7 +8,7 @@ class Search extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.only(left: 20, right: 20, top: 45),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,7 +27,7 @@ class Search extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
 
             // Static result count
             const Text(
@@ -38,41 +38,19 @@ class Search extends StatelessWidget {
                 color: Colors.grey,
               ),
             ),
+            const SizedBox(height: 20),
 
-            const SizedBox(height: 2),
-
-            // Grid of notes
-            Expanded(
-              child: GridView.count(
-                crossAxisCount: 2, // 2 items per row
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                childAspectRatio: 0.7, // adjust for height of image + text
-                children: List.generate(4, (index) {
-                  return _noteCard('assets/images/note.jpg', 'Physics Notes', 4, 50);
-                }),
-              ),
-            ),
-            Expanded(
-              child: GridView.count(
-                crossAxisCount: 2, // 2 items per row
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                childAspectRatio: 0.7, // adjust for height of image + text
-                children: List.generate(4, (index) {
-                  return _noteCard('assets/images/note.jpg', 'Chemistry Notes', 4, 50);
-                }),
-              ),
-            ),
-            Expanded(
-              child: GridView.count(
-                crossAxisCount: 2, // 2 items per row
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                childAspectRatio: 0.7, // adjust for height of image + text
-                children: List.generate(4, (index) {
-                  return _noteCard('assets/images/note.jpg', 'Maths Notes', 4, 50);
-                }),
+            // Scrollable Grid
+            GridView.count(
+              crossAxisCount: 2, // 2 items per row
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              childAspectRatio: 0.7,
+              shrinkWrap: true, // important to make it work inside Column
+              physics: const NeverScrollableScrollPhysics(), // disable GridView's own scroll
+              children: List.generate(
+                8, // number of items (can be dynamic)
+                (index) => _noteCard('assets/images/note.jpg', 'Physics Notes', 4, 50),
               ),
             ),
           ],
@@ -86,7 +64,6 @@ class Search extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // Image
         Container(
           height: 120,
           decoration: BoxDecoration(
@@ -98,13 +75,11 @@ class Search extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 5),
-        // Title
         Text(
           title,
           style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 3),
-        // Star rating
         Row(
           children: List.generate(5, (index) {
             return Icon(
@@ -115,7 +90,6 @@ class Search extends StatelessWidget {
           }),
         ),
         const SizedBox(height: 3),
-        // Price
         Text(
           '\$$price',
           style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
