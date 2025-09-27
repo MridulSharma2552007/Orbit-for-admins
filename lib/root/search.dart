@@ -5,9 +5,12 @@ class Search extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 20,
-      height: 10,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        width: 200,
+        height: 10,
+      ),
     );
   }
 }
