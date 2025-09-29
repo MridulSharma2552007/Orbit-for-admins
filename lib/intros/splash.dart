@@ -27,7 +27,7 @@ class _SplashState extends State<Splash> {
       if (!mounted) return;
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => Search()),
+        MaterialPageRoute(builder: (context) => Authchecker()),
       );
     });
   }
