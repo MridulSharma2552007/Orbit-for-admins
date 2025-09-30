@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:orbit/colors/app_colors.dart';
 
 class Search extends StatelessWidget {
   Search({super.key});
@@ -8,6 +9,7 @@ class Search extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.primary,
       body: SingleChildScrollView(
         padding: const EdgeInsets.only(left: 20, right: 20, top: 45),
         child: Column(
@@ -20,7 +22,7 @@ class Search extends StatelessWidget {
                 hintText: "Search notes...",
                 prefixIcon: const Icon(Icons.search),
                 filled: true,
-                fillColor: Colors.grey[200],
+                fillColor: AppColors.secondary,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(25),
                   borderSide: BorderSide.none,
@@ -47,10 +49,12 @@ class Search extends StatelessWidget {
               mainAxisSpacing: 10,
               childAspectRatio: 0.7,
               shrinkWrap: true, // important to make it work inside Column
-              physics: const NeverScrollableScrollPhysics(), // disable GridView's own scroll
+              physics:
+                  const NeverScrollableScrollPhysics(), // disable GridView's own scroll
               children: List.generate(
                 8, // number of items (can be dynamic)
-                (index) => _noteCard('assets/images/note.jpg', 'Physics Notes', 4, 50),
+                (index) =>
+                    _noteCard('assets/images/note.jpg', 'Physics Notes', 4, 50),
               ),
             ),
           ],
@@ -77,7 +81,11 @@ class Search extends StatelessWidget {
         const SizedBox(height: 5),
         Text(
           title,
-          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: AppColors.backgroundText,
+          ),
         ),
         const SizedBox(height: 3),
         Row(
@@ -92,7 +100,7 @@ class Search extends StatelessWidget {
         const SizedBox(height: 3),
         Text(
           '\$$price',
-          style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+          style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: AppColors.backgroundText),
         ),
       ],
     );

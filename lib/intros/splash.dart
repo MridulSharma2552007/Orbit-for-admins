@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:orbit/auth/authchecker.dart';
-import 'package:orbit/root/search.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});

@@ -19,22 +19,21 @@ class BooksPage extends StatelessWidget {
                 '“No matter what anybody tells you, words and ideas can change the world.” – John Keating',
                 style: GoogleFonts.aBeeZee(
                   textStyle: TextStyle(
-                    color: Color(0xff708993),
+                    color: AppColors.backgroundText,
                     fontSize: 16,
                     fontStyle: FontStyle.italic,
                   ),
                 ),
                 textAlign: TextAlign.center,
               ),
-                
 
               const SizedBox(height: 30),
 
               // Contribution image
               Expanded(
                 child: Image.asset(
-                  "assets/images/snowman.png",
-                  fit: BoxFit.contain,
+                  'assets/images/WebInspection.gif',
+                  height: 200,
                 ),
               ),
 
