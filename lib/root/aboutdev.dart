@@ -56,7 +56,7 @@ class _AboutDevTerminalState extends State<AboutDevTerminal> {
   int _currentCharIndex = 0;
 
   // timing
-  Duration _charDelay = const Duration(milliseconds: 35);
+  final Duration _charDelay = const Duration(milliseconds: 35);
   Timer? _typingTimer;
   bool _isTyping = true;
   bool _cursorVisible = true;
