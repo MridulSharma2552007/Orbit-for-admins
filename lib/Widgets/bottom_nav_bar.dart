@@ -23,9 +23,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
   ];
   final List<Widget> _pages = [
     const Home(),
-    Search(),
+    const SearchPage(),
     const BooksPage(),
-    const AboutDevTerminal(),
+    const Aboutdev(),
   ];
 
   @override

@@ -1,22 +1,17 @@
 class SearchItems {
-  final int id;
   final String title;
+  final String url;
   final DateTime date;
 
-  final String url;
+  SearchItems({required this.title, required this.url, required this.date});
 
-  SearchItems({
-    required this.date,
-    required this.id,
-    required this.title,
-    required this.url,
-  });
   factory SearchItems.fromMap(Map<String, dynamic> map) {
     return SearchItems(
-      date: DateTime.parse(map['data'] as String),
-      id: map['id'] as int,
-      title: map['title'] as String,
-      url: map['url'] as String,
+      title: map['title'] ?? "Untitled", // default if null
+      url: map['url'] ?? "", // default if null
+      date: map['date'] != null
+          ? DateTime.parse(map['date'])
+          : DateTime.now(),
     );
   }
 }

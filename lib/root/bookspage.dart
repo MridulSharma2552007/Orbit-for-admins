@@ -32,10 +32,7 @@ class BooksPage extends StatelessWidget {
 
               // Contribution image
               Expanded(
-                child: Image.asset(
-                  'assets/images/WebInspection.gif',
-                  height: 200,
-                ),
+                child: Image.asset('assets/images/uploadDog.png', height: 200),
               ),
 
               const SizedBox(height: 30),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:orbit/Models/news_fetch_logic.dart';
 import 'package:orbit/Models/news_items.dart';
@@ -39,11 +40,10 @@ class _NewsSectionState extends State<NewsSection> {
           // Title
           Text(
             'News',
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
+            style: GoogleFonts.racingSansOne(
+              color: AppColors.backgroundText
+              ,fontSize: 30
+            )
           ),
           Divider(color: AppColors.backgroundText),
 

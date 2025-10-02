@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:orbit/Widgets/db_container.dart';
 import 'package:orbit/Widgets/news_section.dart';
 import 'package:orbit/colors/app_colors.dart';
@@ -16,8 +17,8 @@ class Home extends StatelessWidget {
             children: [
               Text(
                 'Orbit',
-                style: TextStyle(
-                  fontSize: 40,
+                style: GoogleFonts.rubik(
+                  fontSize: 60,
                   fontWeight: FontWeight.bold,
                   color: AppColors.backgroundText,
                 ),
