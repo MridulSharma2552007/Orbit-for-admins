@@ -4,7 +4,7 @@ import 'package:orbit/colors/app_colors.dart';
 import 'package:orbit/root/bookspage.dart';
 import 'package:orbit/root/home.dart';
 import 'package:orbit/root/search.dart';
-import 'package:orbit/root/settings.dart';
+import 'package:orbit/root/aboutdev.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -19,13 +19,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
     Icon(Icons.home, size: 30, color: Colors.white),
     Icon(Icons.search, size: 30, color: Colors.white),
     Icon(Icons.book, size: 30, color: Colors.white),
-    Icon(Icons.settings, size: 30, color: Colors.white),
+    Icon(Icons.code_rounded, size: 30, color: Colors.white),
   ];
   final List<Widget> _pages = [
     const Home(),
     Search(),
     const BooksPage(),
-    const Settings(),
+    const AboutDevTerminal(),
   ];
 
   @override

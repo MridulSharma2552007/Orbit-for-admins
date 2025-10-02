@@ -48,7 +48,7 @@ class Search extends StatelessWidget {
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
               childAspectRatio: 0.7,
-              shrinkWrap: true, // important to make it work inside Column
+              shrinkWrap: true, 
               physics:
                   const NeverScrollableScrollPhysics(), // disable GridView's own scroll
               children: List.generate(
