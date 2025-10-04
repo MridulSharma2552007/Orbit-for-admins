@@ -20,7 +20,6 @@ class _AnnouncementPageState extends State<AnnouncementPage> {
         final response = await Supabase.instance.client.from('News').insert({
           'title': announce,
         });
-
         // If successful, response.error will be null
         print("✅ News inserted successfully!");
       } catch (e) {

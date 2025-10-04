@@ -3,7 +3,7 @@ import 'package:orbit/Models/db_fetch.dart';
 import 'package:orbit/Models/db_items.dart';
 import 'package:orbit/colors/app_colors.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart'; 
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class DbContainer extends StatefulWidget {
   const DbContainer({super.key});
@@ -87,7 +87,7 @@ class _DbContainerState extends State<DbContainer> {
               borderRadius: BorderRadius.circular(16),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.25),
+                  color: Colors.black.withValues(alpha: 0.25),
                   blurRadius: 8,
                   offset: const Offset(0, 4),
                 ),
@@ -116,7 +116,7 @@ class _DbContainerState extends State<DbContainer> {
                       vertical: 4,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.blueAccent.withOpacity(0.2),
+                      color: Colors.blueAccent.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Text(
