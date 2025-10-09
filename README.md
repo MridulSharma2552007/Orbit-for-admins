@@ -100,12 +100,12 @@ This project is licensed under the MIT License – feel free to use and improve 
 ## 📱 Download the App
 
 <p align="center">
-  <a href="app-release.apk" download>
-    <img src="https://img.shields.io/badge/⬇️%20Download%20Orbit%20App-2b5bff?style=for-the-badge&logo=flutter&logoColor=white" alt="Download Orbit App">
+  <a href="https://github.com/MridulSharma2552007/Orbit/raw/main/app-release.apk">
+    <img src="https://img.shields.io/badge/⬇️%20Download%20Orbit%20App-2b5bff?style=for-the-badge&logo=android&logoColor=white" alt="Download Orbit App">
   </a>
 </p>
 
-> Click the button above to download the latest **release APK** and try out Orbit on your Android device!
+> Click the button above to **download the latest Orbit APK** and explore the app on your Android device!
 
 ---
 
