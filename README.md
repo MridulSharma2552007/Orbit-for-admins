@@ -95,5 +95,18 @@ It provides students and administrators with an easy way to upload, access, and 
 This project is licensed under the MIT License – feel free to use and improve it.
 
 ---
+---
+
+## 📱 Download the App
+
+<p align="center">
+  <a href="app-release.apk" download>
+    <img src="https://img.shields.io/badge/⬇️%20Download%20Orbit%20App-2b5bff?style=for-the-badge&logo=flutter&logoColor=white" alt="Download Orbit App">
+  </a>
+</p>
+
+> Click the button above to download the latest **release APK** and try out Orbit on your Android device!
+
+---
 
 ⭐ If you like this project, give it a star on GitHub!
